@@ -1,0 +1,38 @@
+@keyframes bgColorChangeToGray {
+  from {
+    background-color: gray;
+  }
+  to {
+    background-color: #6b7280; /* Цвет для guessed */
+  }
+}
+
+@keyframes bgColorChangeToYellow {
+  from {
+    background-color: gray;
+  }
+  to {
+    background-color: #f59e0b; /* Цвет для guessed but not correct position */
+  }
+}
+
+@keyframes bgColorChangeToGreen {
+  from {
+    background-color: gray;
+  }
+  to {
+    background-color: #10b981; /* Цвет для guessed with correct position */
+  }
+}
+
+.bg-color-change-to-gray {
+  animation: bgColorChangeToGray 0.5s ease-in-out forwards;
+}
+
+.bg-color-change-to-yellow {
+  animation: bgColorChangeToYellow 0.5s ease-in-out forwards;
+}
+
+.bg-color-change-to-green {
+  animation: bgColorChangeToGreen 0.5s ease-in-out forwards;
+}
