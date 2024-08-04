@@ -1,10 +1,24 @@
 export interface ILetter {
-  letterTitle: string;
-  isGuessed: boolean;
-  isGuessedWithCorrectPosition: boolean;
-  firstRender: boolean;
+	letterTitle: string
+	isGuessed: boolean
+	isGuessedWithCorrectPosition: boolean
+	firstRender: boolean
 }
 
 export interface IWordInDictionary {
-  def: [];
+	def: []
 }
+
+export interface IGallowsType {
+	type: IGallowsTypeGame
+	value: string
+}
+
+export type IGallowsTypeGame =
+	| 'random'
+	| 'animals'
+	| 'landscapes'
+	| 'food'
+	| 'cities'
+	| 'countries'
+	| ''

@@ -1,0 +1,16 @@
+.hg-standardBtn {
+	text-transform: uppercase;
+	@apply transition-colors duration-150;
+}
+
+.is-guessed {
+	@apply !bg-yellow-400;
+}
+
+.is-guessed-with-corr-pos {
+	@apply !bg-green-500;
+}
+
+.bad-letter {
+	@apply !bg-gray-500;
+}
