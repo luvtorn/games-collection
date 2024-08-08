@@ -12,6 +12,7 @@ export interface IWordInDictionary {
 export interface IGallowsType {
 	type: IGallowsTypeGame
 	value: string
+	words: string[]
 }
 
 export type IGallowsTypeGame =

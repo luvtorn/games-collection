@@ -12,7 +12,7 @@ const Notification = observer(() => {
 				<div className='w-full fixed left-1/2 top-2 -translate-x-1/2 z-50'>
 					<motion.div
 						className={classNames(
-							'rounded-lg py-3 px-5 mx-auto font-semibold w-52 text-xl shadow-xl text-neutral-200',
+							'rounded-lg py-3 px-5 mx-auto font-semibold w-52 text-xl shadow-xl text-neutral-200 text-center',
 							{
 								'bg-gradient-to-b from-green-500 to-green-800': type === 'win',
 								'bg-gradient-to-b from-red-500 to-red-800': type === 'lose',

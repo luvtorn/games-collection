@@ -6,7 +6,6 @@ export default {
 			backgroundImage: {
 				'custom-pattern':
 					'linear-gradient(#bbb, transparent 1px), linear-gradient(90deg, #bbb, transparent 1px)',
-				welcome: "url('/welcome.jpg')",
 			},
 			backgroundSize: {
 				'custom-pattern-size': '20px 20px',

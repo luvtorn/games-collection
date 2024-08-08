@@ -65,5 +65,5 @@ export default defineConfig({
 			},
 		}),
 	],
-	base: '/',
+	base: '/games-collection',
 })
