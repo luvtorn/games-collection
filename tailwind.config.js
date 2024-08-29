@@ -15,7 +15,7 @@ export default {
 				myCenter: 'center center',
 			},
 			fontFamily: {
-				sans: ['Caveat Brush', 'cursive'],
+				sans: ['Caveat Brush', 'Handlee', 'cursive'],
 			},
 		},
 	},

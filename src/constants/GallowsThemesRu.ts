@@ -1,6 +1,6 @@
 import { IGallowsType } from '../types/types'
 
-export const GALLOWSTHEMES: IGallowsType[] = [
+export const GALLOWSTHEMESRU: IGallowsType[] = [
 	{
 		type: 'random',
 		value: 'Случайная',
@@ -377,7 +377,7 @@ export const GALLOWSTHEMES: IGallowsType[] = [
 			'Аделаида',
 			'Ванкувер',
 			'Торонто',
-			'Нью-Йорк',
+			'Нью Йорк',
 			'Лос Анджелес',
 			'Сан Франциско',
 			'Чикаго',
@@ -431,7 +431,7 @@ export const GALLOWSTHEMES: IGallowsType[] = [
 			'Мьянма',
 			'Пакистан',
 			'Бангладеш',
-			'Шри-Ланка',
+			'Шри Ланка',
 			'Сирия',
 			'Иран',
 			'Ирак',
@@ -463,8 +463,8 @@ export const GALLOWSTHEMES: IGallowsType[] = [
 			'Ямайка',
 			'Тринидад и Тобаго',
 			'Антигуа и Барбуда',
-			'Сент-Люсия',
-			'Сент-Винсент и Гренадины',
+			'Сент Люсия',
+			'Сент Винсент и Гренадины',
 			'Гренада',
 		],
 	},

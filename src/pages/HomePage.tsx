@@ -1,40 +1,56 @@
 import { Link } from 'react-router-dom'
-import { FaPuzzlePiece, FaChessKnight } from 'react-icons/fa'
-import { GiRattlesnake } from 'react-icons/gi'
+import { FaPuzzlePiece, FaChessKnight, FaFileWord } from 'react-icons/fa'
 import { RiShip2Fill } from 'react-icons/ri'
+import Profile from '../components/WordleComponents/Profile'
+import LanguageSelector from '../components/LanguagesSelector/LanguagesSelector'
 
 const HomePage = () => {
 	return (
-		<div className='text-white w-[95vw] md:w-[55vw] lg:w-[30vw] mx-auto bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 mt-32 rounded-xl p-10 shadow-2xl '>
-			<h1 className='text-center text-4xl mb-8 font-extrabold tracking-wider'>
-				Luvtorn's Games
-			</h1>
+		<div className='w-screen h-screen overflow-x-hidden bg-gray-900'>
+			<div className='w-[95vw] md:w-[55vw] lg:w-[40vw] mx-auto mt-1.5'>
+				<Profile />
 
-			<div className='grid grid-cols-2 gap-8'>
-				<Link
-					className='flex items-center justify-center py-4 text-center bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105'
-					to={'/games-collection/wordle-game'}
-				>
-					<FaPuzzlePiece className='inline-block mr-2' /> Wordle
-				</Link>
-				<Link
-					className='flex items-center justify-center py-4 gap-1 text-center bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105'
-					to={'/games-collection/gallows-game'}
-				>
-					<FaChessKnight className='inline-block mr-2' /> The Gallows
-				</Link>
-				<Link
-					className='py-4 text-center bg-gray-800 rounded-lg shadow-lg line-through hover:bg-gray-700 transition duration-300 transform hover:scale-105'
-					to={'/games-collection'}
-				>
-					<GiRattlesnake className='inline-block mr-2' /> The Snake
-				</Link>
-				<Link
-					className='py-4 text-center bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 line-through transform hover:scale-105'
-					to={'/games-collection/seabattle-game'}
-				>
-					<RiShip2Fill className='inline-block mr-2' /> Sea battle
-				</Link>
+				<div className='text-white text-center'>
+					<h1 className='text-3xl flex justify-center gap-16 mb-4 font-extrabold tracking-wider'>
+						Luvtorn's Games
+						<LanguageSelector isBlack />
+					</h1>
+				</div>
+
+				<div className='grid grid-cols-2 gap-8'>
+					<Link
+						className='flex flex-col items-center justify-center py-6 px-4 text-center bg-gray-800 rounded-lg shadow-lg border-2 border-gray-700 transition duration-300 transform hover:scale-105 hover:bg-gray-700'
+						to={'/wordle-game'}
+					>
+						<FaFileWord className='text-4xl text-white mb-2' />
+						<span className='text-white font-semibold text-lg'>Wordle</span>
+					</Link>
+					<Link
+						className='flex flex-col items-center justify-center py-6 px-4 text-center bg-gray-800 rounded-lg shadow-lg border-2 border-gray-700 transition duration-300 transform hover:scale-105 hover:bg-gray-700'
+						to={'/gallows-game'}
+					>
+						<FaChessKnight className='text-4xl text-white mb-2' />
+						<span className='text-white font-semibold text-lg'>
+							The Gallows
+						</span>
+					</Link>
+					<Link
+						className='flex flex-col items-center justify-center py-6 px-4 text-center bg-gray-800 rounded-lg shadow-lg border-2 border-gray-700 transition duration-300 transform hover:scale-105 hover:bg-gray-700'
+						to={'/seabattle-game'}
+					>
+						<RiShip2Fill className='text-4xl text-white mb-2' />
+						<span className='text-white font-semibold text-lg'>Sea Battle</span>
+					</Link>
+					<Link
+						className='flex flex-col items-center justify-center py-6 px-4 text-center bg-gray-800 rounded-lg shadow-lg border-2 border-gray-700 transition duration-300 transform hover:scale-105 hover:bg-gray-700'
+						to={'/sliding-puzzle'}
+					>
+						<FaPuzzlePiece className='text-4xl text-white mb-2' />
+						<span className='text-white font-semibold text-lg'>
+							Sliding Puzzle
+						</span>
+					</Link>
+				</div>
 			</div>
 		</div>
 	)

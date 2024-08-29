@@ -3,7 +3,8 @@ import KeyboardReact from 'react-simple-keyboard'
 import { wordlyStore } from '../../../stores/WordlyStore'
 import '../../../animation.css'
 import './Keyboard.css'
-import { keyboardOptions } from './keyboardOptions'
+import { keyboardLayouts, keyboardLetters } from './keyboardOptions'
+import { languageStore } from '../../../stores/LanguageStore'
 
 const Keyboard = observer(() => {
 	const {
@@ -15,6 +16,8 @@ const Keyboard = observer(() => {
 		goodLetters,
 	} = wordlyStore
 
+	const { language } = languageStore
+
 	const onKeyPress = (btn: string) => {
 		if (btn !== '{backspace}' && btn !== '{enter}') {
 			setLetter(btn)
@@ -23,6 +26,18 @@ const Keyboard = observer(() => {
 		} else if (btn === '{enter}') {
 			submitWord()
 		}
+	}
+
+	const keyboardOptions = {
+		layout: {
+			default: keyboardLayouts[language] || keyboardLayouts.en,
+		},
+		display: {
+			'{enter}': '⏎',
+			'{backspace}': '⌫',
+			...keyboardLetters[language],
+		},
+		theme: 'hg-theme-default',
 	}
 
 	return (

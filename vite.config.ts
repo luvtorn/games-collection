@@ -29,23 +29,33 @@ export default defineConfig({
 				theme_color: '#333333',
 				icons: [
 					{
-						src: '/512x512.png',
-						sizes: '512x512',
-						type: 'image/png',
+						src: '/games-collection/48x48.png',
+						sizes: '48x48',
+						type: 'image/pmg',
 					},
 					{
-						src: '/192x192.png',
-						sizes: '192x192',
-						type: 'image/png',
-					},
-					{
-						src: '/72x72.png',
+						src: '/games-collection/72x72.png',
 						sizes: '72x72',
 						type: 'image/png',
 					},
 					{
-						src: '/48x48.png',
-						sizes: '48x48',
+						src: '/games-collection/256x256.png',
+						sizes: '256x256',
+						type: 'image/png',
+					},
+					{
+						src: '/games-collection/512x512.png',
+						sizes: '512x512',
+						type: 'image/png',
+					},
+					{
+						src: '/games-collection/192x192.png',
+						sizes: '192x192',
+						type: 'image/png',
+					},
+					{
+						src: '/games-collection/257x257.png',
+						sizes: '257x257',
 						type: 'image/png',
 					},
 				],

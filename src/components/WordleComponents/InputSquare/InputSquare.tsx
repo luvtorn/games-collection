@@ -11,7 +11,7 @@ const InputSquare = observer(({ letter }: Props) => {
 	return (
 		<div
 			className={classNames(
-				'w-16 h-16 flex items-center text-xl justify-center text-black font-bold rounded-md bg-gray-300 border-[3px] border-black',
+				'w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center text-xl justify-center text-black font-bold rounded-md bg-gray-300 border-[1px] border-black',
 				{
 					'bg-color-change-to-gray': !letter.firstRender,
 					'bg-color-change-to-yellow':

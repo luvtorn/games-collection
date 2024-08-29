@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx'
 import { IGallowsTypeGame } from '../types/types'
 import { notificationStore } from './NotificationStore'
+import { playerStore } from './PlayerStore'
 
 class GallowsStore {
 	gameType: IGallowsTypeGame = ''
@@ -8,6 +9,7 @@ class GallowsStore {
 	guessedLetters = new Array<string>(this.startWord.length)
 	badLetters: string[] = []
 	attempts = 0
+	usedIndices: number[] = []
 
 	constructor() {
 		makeAutoObservable(this)
@@ -18,6 +20,26 @@ class GallowsStore {
 		this.startWord =
 			words[Math.floor(Math.random() * words.length)].toLowerCase()
 		this.generateGuessedLetters()
+	}
+
+	getAnswer = () => {
+		if (!playerStore.checkDiamonds()) {
+			const usedIndices = this.usedIndices || []
+			let randomIndex
+
+			if (usedIndices.length >= this.startWord.length) {
+				return
+			}
+
+			do {
+				randomIndex = Math.floor(Math.random() * this.startWord.length)
+			} while (usedIndices.includes(randomIndex))
+
+			usedIndices.push(randomIndex)
+			this.usedIndices = usedIndices
+
+			this.checkLetter(this.startWord.split('')[randomIndex])
+		}
 	}
 
 	generateGuessedLetters = () => {
@@ -42,6 +64,8 @@ class GallowsStore {
 	checkLetter = (letter: string) => {
 		const indexOfLetter = this.startWord.indexOf(letter)
 
+		console.log(indexOfLetter)
+
 		if (this.badLetters.includes(letter)) return
 
 		if (indexOfLetter === -1) {
@@ -62,8 +86,7 @@ class GallowsStore {
 			}, 2000)
 		} else if (this.guessedLetters.join('') === this.startWord) {
 			notificationStore.show('You win', 'win')
-			const wins = localStorage.getItem('win')
-			localStorage.setItem('win', (Number(wins) + 1).toString())
+			playerStore.updateWinsCount('gallows')
 			setTimeout(() => {
 				this.resetGame()
 			}, 2000)

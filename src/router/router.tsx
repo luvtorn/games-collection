@@ -1,24 +1,34 @@
-import { createBrowserRouter } from 'react-router-dom'
-import HomePage from '../pages/HomePage'
-import WordlePage from '../pages/WordlePage'
+import { createHashRouter } from 'react-router-dom'
+import SlidingLevels from '../components/SlidingGame/SlidingGame'
 import GallowsPage from '../pages/GallowsPage'
+import HomePage from '../pages/HomePage'
 import SeaBattlePage from '../pages/SeaBattlePage'
+import SlidingPuzzle from '../pages/SlidingPuzzle'
+import WordlePage from '../pages/WordlePage'
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
 	{
-		path: '/games-collection',
+		path: '/',
 		element: <HomePage />,
 	},
 	{
-		path: '/games-collection/wordle-game',
+		path: '/wordle-game',
 		element: <WordlePage />,
 	},
 	{
-		path: '/games-collection/gallows-game',
+		path: '/gallows-game',
 		element: <GallowsPage />,
 	},
 	{
-		path: '/games-collection/seabattle-game',
+		path: '/seabattle-game',
 		element: <SeaBattlePage />,
+	},
+	{
+		path: '/sliding-puzzle',
+		element: <SlidingPuzzle />,
+	},
+	{
+		path: '/sliding-puzzle/levels',
+		element: <SlidingLevels />,
 	},
 ])

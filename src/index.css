@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@viewport {
+	user-zoom: fixed;
+}
 
 :root {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 
-	@apply bg-purple-800;
-
+	background-color: #1a1f36;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;

@@ -1,0 +1,33 @@
+.puzzle-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+}
+
+.puzzle-grid {
+	display: grid;
+	gap: 2px;
+	max-width: 500px;
+	max-height: 500px;
+	border: 2px solid #ccc;
+}
+
+.tile {
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5em;
+	color: white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	box-sizing: border-box;
+}
+
+.tile.empty {
+	background: none;
+}

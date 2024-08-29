@@ -1,47 +1,15 @@
+import { LETTERS } from '../../../constants/Languages'
 import { gallowsStore } from '../../../stores/GallowsStore'
+import { languageStore } from '../../../stores/LanguageStore'
 import './Letters.css'
 import { observer } from 'mobx-react-lite'
 
-const letters = [
-	'а',
-	'б',
-	'в',
-	'г',
-	'д',
-	'е',
-	'ё',
-	'ж',
-	'з',
-	'и',
-	'й',
-	'к',
-	'л',
-	'м',
-	'н',
-	'о',
-	'п',
-	'р',
-	'с',
-	'т',
-	'у',
-	'ф',
-	'х',
-	'ц',
-	'ч',
-	'ш',
-	'щ',
-	'ы',
-	'ь',
-	'э',
-	'ю',
-	'я',
-]
-
 const Letters = observer(() => {
 	const { guessedLetters, badLetters } = gallowsStore
+	const { language } = languageStore
 	return (
-		<div className='flex flex-row flex-wrap w-[80vw] md:w-[60vw] lg:w-[40vw] mx-auto justify-center  bottom-1 mt-12'>
-			{letters.map((letter, index) => (
+		<div className='flex flex-row flex-wrap w-[80vw] md:w-[60vw] lg:w-[40vw] mx-auto justify-center bottom-1 mt-12'>
+			{LETTERS[language].map((letter, index) => (
 				<button
 					key={index}
 					className={

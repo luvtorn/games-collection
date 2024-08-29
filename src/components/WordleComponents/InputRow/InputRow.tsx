@@ -3,10 +3,13 @@ import { wordlyStore } from '../../../stores/WordlyStore'
 import InputSquare from '../InputSquare/InputSquare'
 
 const InputRow = observer(() => {
-	const { lettersArr } = wordlyStore
+	const { lettersArr, lettersCount } = wordlyStore
 
 	return (
-		<div className='grid grid-cols-5 gap-2 border-2 p-1 rounded-lg'>
+		<div
+			className='grid gap-2 border-2 p-1 rounded-lg'
+			style={{ gridTemplateColumns: `repeat(${lettersCount}, 1fr)` }}
+		>
 			{lettersArr.map((letter, index) => (
 				<InputSquare letter={letter} key={index} />
 			))}
