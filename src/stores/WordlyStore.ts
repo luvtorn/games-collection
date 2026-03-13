@@ -132,7 +132,7 @@ class WordlyStore {
 		) {
 			const word = currentWord.map(l => l.letterTitle).join('')
 
-			if (await checkWord(word)) {
+			if (word) {
 				runInAction(() => {
 					currentWord.forEach((lett, index) => {
 						if (this.startWord[index] === lett.letterTitle) {
